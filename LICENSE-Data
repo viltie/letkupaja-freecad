@@ -1,0 +1,56 @@
+Letkupaja FreeCAD add-on – dimension data and Letkupaja services
+Copyright (c) 2026 Laitehuolto Tiensuu Oy (Letkupaja), Finland
+
+IN ENGLISH
+
+The program code of this add-on (all .py files, including the letkupaja_fc/letkuroute library) is licensed under the
+GNU Lesser General Public License, version 2.1 or (at your option) any later version (LGPL-2.1-or-later); see the
+file LICENSE. This file covers what the LGPL does not.
+
+1. Dimension data. The file letkupaja_fc/letkuroute/data/geometry.json (dimensions of fittings, ferrules, hoses and
+   protections) is not program code licensed under the LGPL but a dataset of Laitehuolto Tiensuu Oy (Letkupaja),
+   subject to the Letkupaja terms of use: https://letkupaja.fi/ehdot#cad-lisaosat
+   You may use it in your own design work and in your customer's documentation, and you may redistribute it unchanged
+   as part of this add-on – also together with a modified version of the add-on distributed under the LGPL. You must
+   not extract it as a separate dataset or use it for other purposes or in other services.
+
+2. Detailed models and the public dimension data. The detailed fitting models (STEP, glTF) delivered by Letkupaja's
+   service and the public dimension data (https://letkupaja.fi/cad/geometry.json) are not covered by the LGPL or by
+   section 1. They are subject to the Letkupaja terms (https://letkupaja.fi/ehdot#3d-mallit): you may use them in your
+   own design work, in your customer's documentation and for designing Letkupaja hose assemblies, but you must not
+   redistribute them as such or compile them into other services.
+
+3. Services. Use of Letkupaja's services (sign-in, detailed models, orders) is subject to the Letkupaja terms of use:
+   https://letkupaja.fi/ehdot#cad-lisaosat. Privacy notice: https://letkupaja.fi/tietosuoja#cad-lisaosat
+
+4. Name. The licences grant no rights to the Letkupaja name or logo. A modified version must not be presented as
+   published by Letkupaja.
+
+Dimensions are indicative; verify installation dimensions before ordering.
+
+SUOMEKSI
+
+Lisäosan ohjelmakoodi (kaikki .py-tiedostot, myös letkupaja_fc/letkuroute-kirjasto) on lisensoitu GNU Lesser General
+Public License -lisenssin version 2.1 tai (valintasi mukaan) minkä tahansa myöhemmän version ehdoin
+(LGPL-2.1-or-later); ks. tiedosto LICENSE. Tämä tiedosto koskee sitä, mitä LGPL ei kata.
+
+1. Mittadata. Tiedosto letkupaja_fc/letkuroute/data/geometry.json (liittimien, holkkien, letkujen ja suojien mitat)
+   ei ole LGPL:n alaista ohjelmakoodia vaan Laitehuolto Tiensuu Oy:n (Letkupaja) tietoaineisto, johon sovelletaan
+   Letkupajan käyttöehtoja: https://letkupaja.fi/ehdot#cad-lisaosat
+   Sitä saa käyttää omassa suunnittelussa ja asiakkaan dokumentaatiossa sekä levittää muuttamattomana tämän lisäosan
+   osana – myös LGPL:n mukaisesti levitetyn muokatun version mukana –, mutta sitä ei saa irrottaa erilliseksi
+   tietokokoelmaksi, muuhun käyttöön eikä muihin palveluihin.
+
+2. Tarkat mallit ja julkinen mittadata. Letkupajan palvelun toimittamat tarkat liitinmallit (STEP, glTF) ja julkinen
+   mittadata (https://letkupaja.fi/cad/geometry.json) eivät ole LGPL:n eivätkä kohdan 1 alaisia. Niihin sovelletaan
+   Letkupajan käyttöehtoja (https://letkupaja.fi/ehdot#3d-mallit): niitä saa käyttää omassa suunnittelussa, asiakkaan
+   dokumentaatiossa ja Letkupajan letkuasennelmien suunnitteluun, mutta niitä ei saa jakaa edelleen sellaisenaan eikä
+   koota muihin palveluihin.
+
+3. Palvelut. Letkupajan palvelujen (kirjautuminen, tarkat mallit, tilaukset) käyttöön sovelletaan Letkupajan
+   käyttöehtoja: https://letkupaja.fi/ehdot#cad-lisaosat. Tietosuojaseloste: https://letkupaja.fi/tietosuoja#cad-lisaosat
+
+4. Nimi. Lisenssit eivät anna oikeutta Letkupaja-nimeen tai -tunnukseen. Muokattua versiota ei saa esittää Letkupajan
+   julkaisemana.
+
+Mitat ovat ohjeellisia; tarkista asennusmitat ennen tilausta.

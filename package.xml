@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<package format="1" xmlns="https://wiki.freecad.org/Package_Metadata">
+  <name>Letkupaja</name>
+  <description>Letkupaja hydraulic hose routing: route a hose between two ports with the correct bend radius, get the exact cut length and simplified fittings, and optionally order the same hose from Letkupaja (letkupaja.fi, delivery within Finland). Hydrauliikkaletkun reititys, katkaisumitta ja tilaus.</description>
+  <version>0.1.1</version>
+  <date>2026-10-27</date>
+  <maintainer email="ville@laitehuoltotiensuu.fi">Laitehuolto Tiensuu Oy (Letkupaja)</maintainer>
+  <author email="ville@laitehuoltotiensuu.fi">Laitehuolto Tiensuu Oy</author>
+  <license file="LICENSE">LGPL-2.1-or-later</license>
+  <license file="LICENSE-Data">SEE LICENSE IN LICENSE-Data</license>
+  <url type="repository" branch="main">https://github.com/viltie/letkupaja-freecad</url>
+  <url type="readme">https://raw.githubusercontent.com/viltie/letkupaja-freecad/main/README.md</url>
+  <url type="bugtracker">https://github.com/viltie/letkupaja-freecad/issues</url>
+  <url type="documentation">https://letkupaja.fi/cad-lisaosat?lang=en#freecad</url>
+  <url type="website">https://letkupaja.fi/cad-lisaosat#freecad</url>
+  <icon>Resources/icons/Letkupaja.svg</icon>
+  <tag>Letkupaja</tag>
+  <tag>hydraulics</tag>
+  <tag>hydraulic hose</tag>
+  <tag>hose</tag>
+  <tag>hose routing</tag>
+  <tag>routing</tag>
+  <tag>cut length</tag>
+  <tag>bend radius</tag>
+  <tag>fittings</tag>
+  <tag>hose assembly</tag>
+  <tag>assembly</tag>
+  <tag>STEP</tag>
+  <tag>machine design</tag>
+  <tag>mechanical engineering</tag>
+  <content>
+    <workbench>
+      <name>Letkupaja</name>
+      <classname>LetkupajaWorkbench</classname>
+      <subdirectory>./</subdirectory>
+      <icon>Resources/icons/Letkupaja.svg</icon>
+      <freecadmin>0.21.0</freecadmin>
+      <pythonmin>3.10.0</pythonmin>
+    </workbench>
+  </content>
+</package>
