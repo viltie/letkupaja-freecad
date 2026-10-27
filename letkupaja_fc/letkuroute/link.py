@@ -2,9 +2,8 @@
 # SPDX-FileCopyrightText: 2026 Laitehuolto Tiensuu Oy (Letkupaja)
 """Letkupajan Letkukone-linkit: https://letkupaja.fi/?asennelma=<base64url(JSON) ilman täytettä>#rakenna
 
-JSON on kuten Letkupajan src/lib/schemas.ts assemblySchema ja src/components/Configurator.tsx DEFAULT_CONFIG
-(avainten järjestys: hose, size, a, b, lengthMm, lengthMode, orientation, protection, sitten valinnaiset).
-Sivu lukee linkin parseSharedConfig-funktiolla (atob + assemblySchema.safeParse) ja tarkistaa valinnat uudelleen
+JSON on Letkukoneen jaetun asennelman muoto (avainten järjestys: hose, size, a, b, lengthMm, lengthMode,
+orientation, protection, sitten valinnaiset). Sivu lukee linkin (base64url-JSON) ja tarkistaa valinnat uudelleen
 hinnoittelussa; enintään 2000 merkkiä. JSON koodataan ASCII-muodossa (ä -> \\u00e4), koska atob palauttaa tavuja.
 """
 from __future__ import annotations

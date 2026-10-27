@@ -1172,7 +1172,7 @@ def route(
     if avoid_idx is not None:
         # Raportoitava väli lasketaan tarkasti keskilinjoista (janat janoja vasten): ruudukkohaku (_AvoidIndex) näkee
         # vain hakusäteen (od/2 + margin + …) sisällä olevat letkut, joten kauempana oleva letku antoi äärettömän
-        # tai liian suuren välin (CAD-apurin testi 26.10.2026).
+        # tai liian suuren välin.
         hose_clear = min((min_distance(smp.pts, pts)[0] - float(od) / 2 - float(o) / 2 for pts, o in avoid_items), default=INF)
         if v_h > 0:
             ok = False

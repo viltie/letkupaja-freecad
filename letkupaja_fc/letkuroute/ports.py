@@ -2,7 +2,7 @@
 # SPDX-FileCopyrightText: 2026 Laitehuolto Tiensuu Oy (Letkupaja)
 """Liitäntäkehykset: reitityksen portti (holkin takapää) ja liittimen kinematiikka tiivistyspisteestä holkkiin.
 
-Liittimen paikallinen kehys (sama kuin hosecad/model.py ja verkkosivun 3D-katselin):
+Liittimen paikallinen kehys (sama kuin Letkupajan STEP-mallien generaattorissa ja verkkosivun 3D-katselimessa):
 * origo O = letkun pohja (katkaistun letkun pää liittimen sisällä)
 * x' = letkun suunta holkista poispäin (kohti letkun vapaata osaa)
 * y' = kulmaliittimen kulman suunta (tiivistyspiste on +y'-puolella), banjossa pultin suunta (kanta +y')
@@ -162,7 +162,7 @@ def fitting_frame(end: Mapping[str, Any], size: str, hose: str, seal: Sequence[f
 
 def banjo_seal_point(end: Mapping[str, Any], size: str, face_point: Sequence[float], normal: Sequence[float]) -> Vec3:
     """Banjon tiivistyspiste (silmukan keskitaso pultin akselilla) koneen tiivistyspinnan pisteestä:
-    face_point + (silmukan leveys / 2 + tiivisteen paksuus) · normal (hosecad bolt_parts: tiiviste -w/2 - t ... -w/2)."""
+    face_point + (silmukan leveys / 2 + tiivisteen paksuus) · normal (STEP-mallin banjopultti: tiiviste -w/2 - t ... -w/2)."""
     res = G.resolve_end(end, size)
     eye = next((p for p in res.geo.get("head", []) if p.get("t") == "eye"), None)
     if not res.banjo or not eye:
@@ -179,7 +179,7 @@ def banjo_seal_point(end: Mapping[str, Any], size: str, face_point: Sequence[flo
 
 
 def norm_orientation(config: Mapping[str, Any]) -> float:
-    """Kiertokulma 0..360 (0, jos kumpikaan pää ei ole suunnattava), kuten hosecad.norm_orientation."""
+    """Kiertokulma 0..360 (0, jos kumpikaan pää ei ole suunnattava), kuten Letkupajan STEP-mallissa."""
     if not G.needs_orientation(config):
         return 0.0
     try:
@@ -190,7 +190,7 @@ def norm_orientation(config: Mapping[str, Any]) -> float:
 
 
 def assembly_frames(config: Mapping[str, Any]) -> tuple[EndFrame, EndFrame]:
-    """Suoran asennelman päät samassa kehyksessä kuin Letkupajan STEP-malli (hosecad):
+    """Suoran asennelman päät samassa kehyksessä kuin Letkupajan STEP-malli:
     letkun akseli = +X A:sta B:hen, P_A:n projektio origossa, A:n kulma +Y, B:n kulma (0, cos N, sin N)."""
     ln = G.lengths(config)
     n = math.radians(norm_orientation(config))

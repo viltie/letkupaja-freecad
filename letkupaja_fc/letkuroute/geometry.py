@@ -2,9 +2,10 @@
 # SPDX-FileCopyrightText: 2026 Laitehuolto Tiensuu Oy (Letkupaja)
 """Letkupajan mittadata (data/geometry.json) ja pituuslaskenta.
 
-Haku- ja varamittalogiikka on siirretty Letkupajan tiedostoista cad/hosecad/geo.py ja src/lib/hose3d/data.ts
-(sizeGeo, hoseGeo, resolveEnd: perhe -> kierre -> kulma -> koko -> "*"); pituudet kuten scene.ts lengths() ja
-assembly.ts cutLength(). Pidä synkronissa, kun Letkupajan mittalogiikka muuttuu (tools/sync_geometry.py päivittää datan).
+Haku- ja varamittalogiikka on sama kuin Letkupajan STEP-mallien generaattorissa ja verkkosivun 3D-katselimessa
+(mitan haku: perhe -> kierre -> kulma -> koko -> "*"), ja pituudet lasketaan kuten Letkukoneessa (kokonaismitta ja
+katkaisumitta). Pidä synkronissa, kun Letkupajan mittalogiikka muuttuu; data päivitetään Letkupajan julkaisemasta
+mittadatasta (https://letkupaja.fi/cad/geometry.json).
 
 Mittakäsitteet (mm, letkun akselin suunnassa):
 * C (c_dim): tiivistyspisteestä letkun pohjaan O. O = katkaistun letkun pää liittimen sisällä (kauluksen takapinta).
@@ -30,7 +31,7 @@ from typing import Any, Mapping
 DATA_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "data")
 DEFAULT_GEOMETRY_PATH = os.path.join(DATA_DIR, "geometry.json")
 
-# Holkin takapään uran alku takapinnasta (hosecad/model.py ferrule_solid: (xr - 1.7, R) ... (xr, R - 0.45))
+# Holkin takapään uran alku takapinnasta (Letkupajan STEP-mallin holkki: (xr - 1.7, R) ... (xr, R - 0.45))
 FERRULE_EDGE_FROM_REAR = 1.7
 
 INSERTION_REFS = ("rear", "edge")

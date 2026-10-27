@@ -6,11 +6,11 @@ Ilmainen malli: oikeat ulkomitat (kuusiot, mutteri, kaulus, kulmarunko, holkki, 
 tiedostosta, mutta ei sisäkierteitä, kanavia, O-renkaita eikä muita yksityiskohtia. Tarkka STEP-malli on erillinen
 maksullinen tuote (ks. api.py).
 
-Logiikka on siirretty Letkupajan STEP-generaattorista (hosecad/model.py: build_end, head_solids, envelope,
-ferrule_solid, bolt_parts) niin, että ulkomitat ja sijainnit ovat samat kuin tarkassa mallissa.
+Logiikka on siirretty Letkupajan STEP-generaattorista (päätyosat, pyörähdysosat, ulkoprofiili, holkki ja banjon
+pultti) niin, että ulkomitat ja sijainnit ovat samat kuin tarkassa mallissa.
 
 Tämä moduuli on puhdasta Pythonia: se tuottaa muotojen kuvaukset (Revolve, Hex, Cyl, Bend) liittimen paikallisessa
-kehyksessä. fcgeom.py tekee niistä FreeCAD-kappaleet. Kehys (sama kuin letkuroute ja hosecad):
+kehyksessä. fcgeom.py tekee niistä FreeCAD-kappaleet. Kehys (sama kuin letkuroute ja Letkupajan STEP-malli):
 origo O = letkun pohja, x' = letkun suunta holkista poispäin, y' = kulman suunta (banjo: pultin akseli), z' = x' × y'.
 """
 from __future__ import annotations
@@ -103,7 +103,7 @@ def _mul(a: Vec3, k: float) -> Vec3:
 
 
 def prim_radii(p: Mapping[str, Any]) -> tuple[float, float, float, float] | None:
-    """Pyörähdysprimitiivin (u0, u1, r0, r1); sisäkierre, kuusio, O-rengas ym. -> None (hosecad.prim_radii)."""
+    """Pyörähdysprimitiivin (u0, u1, r0, r1); sisäkierre, kuusio, O-rengas ym. -> None."""
     t = p.get("t")
     if t == "cyl":
         return (p["u0"], p["u1"], p["d"] / 2, p["d"] / 2)
@@ -116,7 +116,7 @@ def prim_radii(p: Mapping[str, Any]) -> tuple[float, float, float, float] | None
 
 
 def envelope(prims: Sequence[tuple[float, float, float, float]]) -> list[tuple[float, float]]:
-    """Pyörähdysosien yhteinen ulkoprofiili (u, r); aukot r = 0 (hosecad.envelope)."""
+    """Pyörähdysosien yhteinen ulkoprofiili (u, r); aukot r = 0."""
     prims = [p for p in prims if p[1] - p[0] > 1e-4]
     if not prims:
         return []
@@ -151,7 +151,7 @@ def envelope(prims: Sequence[tuple[float, float, float, float]]) -> list[tuple[f
 
 
 def envelope_parts(env: Sequence[tuple[float, float]]) -> list[list[tuple[float, float]]]:
-    """Ulkoprofiili suljetuiksi pyörähdysprofiileiksi (r = 0 -kohdat jakavat osiin; hosecad.solid_from_envelope)."""
+    """Ulkoprofiili suljetuiksi pyörähdysprofiileiksi (r = 0 -kohdat jakavat osiin)."""
     parts: list[list[tuple[float, float]]] = []
     cur: list[tuple[float, float]] = []
     for u, r in env:
@@ -184,7 +184,7 @@ def _clean_profile(profile: Sequence[tuple[float, float]]) -> list[tuple[float, 
 
 
 def ferrule_profile(fr: Mapping[str, Any], hose_id: float, hose_od: float) -> list[tuple[float, float]]:
-    """Puristusholkki x' = −lip … len − lip (hosecad.ferrule_solid): etuhuuli, 30° viiste, runko, ura takapäässä.
+    """Puristusholkki x' = −lip … len − lip kuten STEP-mallissa: etuhuuli, 30° viiste, runko, ura takapäässä.
     Sisäpinta: letkun ulkopinta letkun pohjasta taaksepäin ja nipan pinta huulen alla."""
     xf = -fr["lip"]
     xr = fr["len"] - fr["lip"]
@@ -339,7 +339,7 @@ def end_envelope(end: Mapping[str, Any], size: str, hose: str, thread_od: float 
 
 
 def _bolt_shapes(bolt: Mapping[str, Any], eye_w: float, mode: str, seal_kind: Any, P: Vec3) -> list[Shape]:
-    """Banjopultti ja tiivisteet pultin akselilla y' (kanta +y'), hosecad.bolt_parts yksinkertaistettuna."""
+    """Banjopultti ja tiivisteet pultin akselilla y' (kanta +y'), STEP-mallin pultti yksinkertaistettuna."""
     usit = (bolt.get("seals") or {}).get("usit") or bolt["washer"]
     copper = (bolt.get("seals") or {}).get("copper") if seal_kind == "copper" else None
     seal = copper or usit

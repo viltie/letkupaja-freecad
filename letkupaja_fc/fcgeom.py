@@ -80,7 +80,7 @@ def solid_hex(s: E.Hex) -> Part.Shape | None:
     prism = Part.Face(Part.makePolygon(pts)).extrude(V(L.vec.mul(u, length)))
     if not s.chamfer:
         return prism
-    # 30° viisteet kuten hosecad.hex_x: päätypinnan säde 0,95·af/2
+    # 30° viisteet kuten STEP-mallin kuusiossa: päätypinnan säde 0,95·af/2
     r_face = 0.95 * s.af / 2
     kc = 1 / math.tan(math.radians(30))
     dd = min(length / 2, (rc * 1.02 - r_face) / kc)

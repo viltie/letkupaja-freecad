@@ -9,7 +9,7 @@ Moduulit:
 * link: Letkukone-linkit (?asennelma=base64url-JSON#rakenna)
 * vec: vektorit, kehykset ja yksikkömuunnokset (mm, cm, m, in)
 
-Kaikki pituudet millimetreinä, kulmat asteina. Ks. core/README.md.
+Kaikki pituudet millimetreinä, kulmat asteina.
 """
 from .geometry import (
     FERRULE_EDGE_FROM_REAR,
