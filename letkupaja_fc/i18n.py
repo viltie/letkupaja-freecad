@@ -266,7 +266,7 @@ STRINGS: dict[str, tuple[str, str]] = {
     "login.denied": ("Kirjautuminen hylättiin selaimessa.", "The sign-in was declined in the browser."),
     "login.cancelled": ("Kirjautuminen peruttiin; tarkkaa mallia ei ladattu.", "Sign-in cancelled; the detailed model was not downloaded."),
     "login.failed": ("Kirjautuminen ei onnistunut: palvelin ei hyväksynyt tunnistetta. Kirjaudu uudelleen.", "Sign-in failed: the server did not accept the token. Please sign in again."),
-    "login.free": ("Tarkat mallit ovat tilillesi maksuttomia.", "Detailed models are free for your account."),
+    "login.free": ("Tarkat mallit sisältyvät sopimushinnoitteluusi.", "Detailed models are included in your contract pricing."),
     "login.expires": ("Kirjautuminen voimassa {d} asti.", "Signed in until {d}."),
     "login.manage": ("Laitteet ja kirjautumiset: {url}", "Devices and sign-ins: {url}"),
     "login.token_where": ("Tunniste: {path}", "Token file: {path}"),

@@ -25,10 +25,13 @@ hose from Letkupaja (https://letkupaja.fi), a Finnish maker of crimped hydraulic
 ## What works and what is not free
 
 * Routing, measurements, simplified fittings and the order link work offline and without an account.
-* **Detailed fitting models (STEP)** are a Letkupaja service and need a Letkupaja account (sign-in with a device
-  code in your browser). They are free for assemblies you have ordered or bought (same hose type, size, fittings
-  and protection, any length and orientation). Otherwise a model costs €3.00 + VAT (€3.77 incl. Finnish VAT), paid in
-  your browser at letkupaja.fi and credited when you order hose assemblies within 12 months.
+* **Detailed fitting models (STEP)** are a Letkupaja service and need a Letkupaja account (sign-in with a device code
+  in your browser). They are free for assemblies you have ordered or bought (same hose type, size, fittings and
+  protection, any length and orientation), and the models included in your contract pricing download without a
+  separate purchase. Otherwise a model costs €3.00 + VAT (€3.77 incl. Finnish VAT), paid in your browser at
+  letkupaja.fi and credited when you order hose assemblies within 12 months.
+* Designing regularly or ordering hoses in series? We offer companies contract pricing, which can also cover the 3D
+  models. Ask about contract pricing: ville@laitehuoltotiensuu.fi.
 * The Letkupaja web shop is in Finnish and delivers within Finland only. The workbench works everywhere.
 
 ## Requirements
@@ -104,11 +107,13 @@ delivery to a business address and ask for contract pricing. More: https://letku
 ## Suomeksi
 
 **Letkupaja-työpöytä FreeCADiin:** reititä hydrauliikkaletku kahden liitännän välille FreeCAD-mallissa (myös
-App::Part-, App::Link- ja Assembly-kokoonpanoissa), näe katkaisumitta ja pienin taivutussäde heti ja tilaa
-halutessasi juuri tämä letku Letkupajasta (https://letkupaja.fi). Reititys, mitat, yksinkertaistetut liittimet ja
-tilauslinkki toimivat ilman tiliä ja ilman verkkoa. Tarkat liitinmallit (STEP) ladataan Letkupaja-tilillä: ne ovat
-maksuttomia tilaamillesi ja ostamillesi asennelmille, muuten 3,00 € + alv (3,77 € sis. alv), ja hinta hyvitetään,
-kun tilaat letkuasennelmia 12 kuukauden kuluessa.
+App::Part-, App::Link- ja Assembly-kokoonpanoissa), näe katkaisumitta ja pienin taivutussäde heti ja tilaa halutessasi
+juuri tämä letku Letkupajasta (https://letkupaja.fi). Reititys, mitat, yksinkertaistetut liittimet ja tilauslinkki
+toimivat ilman tiliä ja ilman verkkoa. Tarkat liitinmallit (STEP) ladataan Letkupaja-tilillä: ne ovat maksuttomia
+tilaamillesi ja ostamillesi asennelmille, ja sopimushinnoittelusi mukaiset mallit ladataan ilman erillistä ostoa;
+muuten malli maksaa 3,00 € + alv (3,77 € sis. alv), ja hinta hyvitetään, kun tilaat letkuasennelmia 12 kuukauden
+kuluessa. Suunnitteletteko säännöllisesti tai tilaatteko letkuja sarjoina? Teemme yrityksille sopimushinnoittelun,
+joka voi kattaa myös 3D-mallit. Kysy sopimushinnoista: ville@laitehuoltotiensuu.fi.
 
 **Vaatimukset:** FreeCAD 1.0 tai uudempi (testattu 1.0.0 ja 1.1.4 Linuxissa).
 
